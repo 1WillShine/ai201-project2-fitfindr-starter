@@ -63,7 +63,7 @@ def search_listings(
             item.get("description", ""),
             item.get("category", ""),
             " ".join(item.get("style_tags", [])),
-            item.get("brand") or "",
+            item.get("brand", ""),
         ]).lower()
         score = sum(1 for kw in keywords if kw in searchable)
         if score > 0:
